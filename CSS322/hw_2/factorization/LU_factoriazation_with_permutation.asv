@@ -1,0 +1,14 @@
+function [P, L, U, v] = LU_factoriazation_with_permutation(A, b)
+% A is a square matrix (n, n)
+% b is a column vector (n, 1)
+
+n = size(A, 1);
+L = zeros(n, n);
+U = A;
+v = zeros(n);
+
+for i = 1:n
+    [M, I] = max(U(i:n, i));
+    I = I + (i - )
+end
+

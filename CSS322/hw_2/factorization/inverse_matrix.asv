@@ -1,0 +1,14 @@
+function [inverse_A] = inverse_matrix(A)
+% A is a square matrix (n, n)
+
+n = size(A, 1);
+
+[P, L, U, ~] = LU_factoriazation_with_permutation(A);
+I_n = eye(n);
+
+for i = 1:n
+    e = P * I_n(i, :);
+    w = forward_substitution(L, e);
+    x = backward_substitution(U, w);
+end
+
